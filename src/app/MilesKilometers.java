@@ -5,18 +5,16 @@ import java.util.Scanner;
 public class MilesKilometers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value in miles.");
 
-        if (scanner.hasNextDouble()) {
-            double miles = scanner.nextDouble();
-            double kilometers = convertMilesToKilometers(miles);
-            System.out.println(miles + " miles is equal to " + kilometers + " kilometers.");
-        } else {
-            System.out.println("Invalid input. Please enter a numeric value in miles.");
-        }
+        System.out.println("Enter the value in kilometers:");
+        double kilometers = scanner.nextDouble();
+
+        double miles = convertKilometersToMiles(kilometers);
+
+        System.out.println(kilometers + " kilometers is equal to " + miles + " miles.");
     }
 
-    private static double convertMilesToKilometers(double miles) {
-        return miles * 1.60934;
+    public static double convertKilometersToMiles(double kilometers) {
+        return kilometers / 1.60934;
     }
 }
